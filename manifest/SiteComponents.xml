@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SiteComponents>
+  <Component name="vxe" class="Logics\Foundation\VisualXMLEditor\SiteComponent" method="responder"/>
+  <Component name="robots\.txt" class="Logics\Foundation\Web\SiteComponents" method="robots"/>
+  <Component name="sitemap\.xml" class="Logics\Foundation\Web\SiteComponents" method="sitemap"/>
+  <Component name="[A-Za-z]{10}" class="Logics\Solitaire\Shorty\Redirect" method="redirector"/>
+  <Component name="ajax" class="Logics\Solitaire\Shorty\AJAX" method="responder"/>
+</SiteComponents>

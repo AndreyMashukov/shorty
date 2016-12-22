@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:include schemaLocation="urn:visualXMLeditor:schema:longurl"/>
+
+<xs:group name="emptygroup">
+  <xs:sequence>
+  </xs:sequence>
+</xs:group>
+
+<xs:group name="cookiegroup">
+  <xs:sequence>
+    <xs:element name="PHPSESSID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+
+<xs:complexType name="gettype">
+<xs:sequence>
+  <xs:group ref="emptygroup"/>
+  <xs:element name="transition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="posttype">
+<xs:sequence>
+  <xs:group ref="longurl"/>
+  <xs:element name="transition" type="xs:string" minOccurs="0" maxOccurs="1"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cookietype">
+  <xs:choice>
+    <xs:group ref="emptygroup"/>
+    <xs:group ref="cookiegroup"/>
+  </xs:choice>
+</xs:complexType>
+
+<xs:element name="request">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="get" type="gettype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="post" type="posttype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="cookie" type="cookietype" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

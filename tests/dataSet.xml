@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="shorty">
+	<table_data name="associations">
+	<row>
+		<field name="id">2</field>
+		<field name="longURL">http://google.com</field>
+		<field name="shortURL">MlpVmweTju</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="longURL">https://vk.com</field>
+		<field name="shortURL">EJRDjdsErt</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

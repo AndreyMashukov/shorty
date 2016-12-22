@@ -1,0 +1,87 @@
+<?php
+
+// Name of the host which will redirect short URLs
+define("SHORT_HOST", "http://shorty.ru");
+
+// URL to which browser should be redirected in case of invalid request. Empty means nothing should be shown to the client.
+// define("INVALID_REQUEST_URL", "");
+
+// If set to true then error logging is reverted to standard PHP behaviour
+// define("LOGGER_DISABLE", true);
+
+// Regular expression to match in order to suppress logging
+// define("LOGGER_SUPPRESS", "Too many connections");
+
+// Regular expression to match with file name in order to suppress logging from that file
+// define("LOGGER_SUPPRESS_FILE", "MySQLdatabase.php");
+
+// Logger database host
+define("LOGGER_HOST", "");
+
+// Logger database name
+define("LOGGER_DB", "");
+
+// Logger database user name
+define("LOGGER_USER", "");
+
+// Logger database password
+define("LOGGER_PASS", "");
+
+// File for PHP error log
+// define("LOGGER_FILE", "/tmp/php-errorlog");
+
+// DAO slots description
+// define("DAO", "slot: interface => implementation");
+
+// Location where run files are kept
+// define("RUN_DIRECTORY", "/var/run");
+
+// Space separated list of locales to be used by the script. If not specified then list is generated automatically from locale folder.
+// define("LOCALES", "en_AU");
+
+// Locale to be used by the script
+// define("LOCALE", "en_AU");
+
+// Language to be used by the script
+// define("LANGUAGE", "en");
+
+// Address format to use if no specific format is known
+// define("LOCALE_DEFAULT_ADDRESS_FORMAT", "%a%N%f%N%d%N%b%N%r%t%e%t%h%t%s%N%T%t%S%t%z%N%c%N");
+
+// MySQL database host
+// define("MYSQL_DBHOST", "");
+
+// MySQL database name
+// define("MYSQL_DBNAME", "");
+
+// MySQL database user
+// define("MYSQL_DBUSER", "");
+
+// MySQL database pass
+// define("MYSQL_DBPASS", "");
+
+// Default database host
+// define("DBHOST", "");
+
+// Default database name
+// define("DBNAME", "");
+
+// Default database user
+// define("DBUSER", "");
+
+// Default database pass
+// define("DBPASS", "");
+
+// PostgreSQL database host
+// define("POSTGRESQL_DBHOST", "");
+
+// PostgreSQL database name
+// define("POSTGRESQL_DBNAME", "");
+
+// PostgreSQL database user
+// define("POSTGRESQL_DBUSER", "");
+
+// PostgreSQL database pass
+// define("POSTGRESQL_DBPASS", "");
+
+?>

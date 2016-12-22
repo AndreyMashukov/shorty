@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="urltype">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="https?://.*"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:group name="emptygroup">
+  <xs:sequence>
+  </xs:sequence>
+</xs:group>
+
+<xs:group name="longurlgroup">
+  <xs:sequence>
+    <xs:element name="longurl" type="urltype"/>
+    <xs:element name="transition" type="xs:string"/>
+  </xs:sequence>
+</xs:group>
+
+<xs:group name="cookiegroup">
+  <xs:sequence>
+    <xs:element name="PHPSESSID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+
+<xs:complexType name="gettype">
+ <xs:group ref="longurlgroup"/>
+</xs:complexType>
+
+<xs:complexType name="posttype">
+  <xs:group ref="emptygroup"/>
+</xs:complexType>
+
+<xs:complexType name="cookietype">
+  <xs:choice>
+    <xs:group ref="emptygroup"/>
+    <xs:group ref="cookiegroup"/>
+  </xs:choice>
+</xs:complexType>
+
+<xs:element name="request">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="get" type="gettype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="post" type="posttype" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="cookie" type="cookietype" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

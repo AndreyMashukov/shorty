@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface name="shorturls">
+  <actions>
+    <action name="isLongURLExists">
+      <parameter><scalar type="string" name="longURL"/></parameter>
+      <return><scalar type="bool" name="exists"/></return>
+    </action>
+    <action name="getShortURL">
+      <parameter><scalar type="string" name="longURL"/></parameter>
+      <return><scalar type="string" name="shortURL"/></return>
+    </action>
+    <action name="getLongURL">
+      <parameter><scalar type="string" name="shortURL"/></parameter>
+      <return><scalar type="string" name="longURL"/></return>
+    </action>
+    <action name="isShortURLExists">
+      <parameter><scalar type="string" name="shortURL"/></parameter>
+      <return><scalar type="bool" name="exists"/></return>
+    </action>
+    <action name="addAssociation">
+      <parameter><scalar type="string" name="longURL"/></parameter>
+      <parameter><scalar type="string" name="shortURL"/></parameter>
+    </action>
+  </actions>
+</interface>

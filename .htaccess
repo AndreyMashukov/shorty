@@ -1,0 +1,56 @@
+# AllowOverride all must be enabled in apache for this directory
+
+php_value post_max_size "512M"
+
+php_value memory_limit "512M"
+
+<Files "gengocallback.php">
+    AuthType None
+    Allow from all
+    Satisfy Any
+</Files>
+
+AddHandler php5-script .wsdl
+
+php_value memory_limit "2048M"
+
+AcceptPathInfo On
+
+AddHandler php5-script .wsdl
+<Files "*.wsdl">
+    AuthType None
+    Allow from all
+    Satisfy Any
+</Files>
+<Files "*Service.php">
+    AuthType None
+    Allow from all
+    Satisfy Any
+</Files>
+
+RewriteEngine On
+RewriteRule ^robots\.txt$ index.php [L]
+RewriteRule ^sitemap\.xml$ index.php [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1
+<ifModule mod_deflate.c>
+    SetOutputFilter DEFLATE
+</ifModule>
+<ifModule mod_headers.c>
+    ExpiresActive On
+    ExpiresDefault A604800
+    <filesMatch ".(ico|gif|jpg|jpeg|png|flv|pdf|swf|mov|mp3|wmv|ppt)$">
+        ExpiresDefault A2419200
+        Header append Cache-Control "public"
+    </filesMatch>
+    <filesMatch ".(xml|txt|html|js|css)$">
+        ExpiresDefault A604800
+        Header append Cache-Control "public, must-revalidate"
+    </filesMatch>
+    <filesMatch ".(php|cgi|pl|htm)$">
+        ExpiresDefault A0
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+    </filesMatch>
+</ifModule>

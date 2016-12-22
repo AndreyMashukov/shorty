@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Interfaces>
+  <Interface name="shorturls" default="Logics\Solitaire\Shorty\MySQLImplementation">
+    <Implementation name="Logics\Solitaire\Shorty\MySQLImplementation">MySQLImplementation.php</Implementation>
+  </Interface>
+</Interfaces>

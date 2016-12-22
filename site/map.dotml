@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph xmlns="http://www.martin-loetzsch.de/DOTML" file-name="Shorty">
+
+  <cluster id="Main" style="filled" label="Main pages">
+    <node id="Home" fontsize="9"  fontname="Arial" label="Home page"/>
+    <node id="About" fontsize="9"  fontname="Arial" label="About page"/>
+  </cluster>
+
+  <node id="ActionGetURL" fontsize="9"  fontname="Arial" shape="diamond" label="Get URL"/>
+
+  <edge from="Home" to="ActionGetURL" fontname="Arial" fontsize="9" label="geturl"/>
+  <edge from="ActionGetURL" to="Home" fontname="Arial" fontsize="9" label="Home"/>
+
+</graph>
